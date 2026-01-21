@@ -1,0 +1,164 @@
+/* Importação de fontes direto do local */
+@font-face {
+    font-family: "Unbounded";
+    src: url("../Fonts/Unbounded-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap; /* Garante que a fonte seja carregada rapidamente */
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../Fonts/Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap; /* Garante que a fonte seja carregada rapidamente */
+}
+
+/* Variáveis globais */
+:root{
+    --texto-dark: #F5F5F5;
+    --texto-light: #232323;
+    --fundo-dark: #0E1014;
+    --fundo-light: #FFFFFF;
+    --botao: #9747FF;
+    --botao-hover: #8233E8;
+}
+
+/* Modo claro */
+body.light-mode {
+    --texto-dark: #232323;
+    --texto-light: #F5F5F5;
+    --fundo-dark: #FFFFFF;
+    --fundo-light: #0E1014;
+}
+
+/* Reset padrão de estilos */
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos globais */
+body{
+    background-color: var(--fundo-dark);
+    color: var(--texto-dark);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos específicos para o cabeçalho */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 75px;
+}
+
+header img, header button{
+    margin: 0 auto;
+}
+
+button{
+    all: unset;
+    margin: 0;
+    display: block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-7px);
+}
+
+
+button:active {
+  transform: translateY(-1px);
+}
+
+/* Estilos específicos para o main */
+h1{
+    font-size: 64px;
+    font-family: "Unbounded", sans-serif;
+    text-align: center;
+    margin-top: 60px;
+}
+
+h1 span{
+    color: var(--botao);
+}
+
+p{
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    max-width: 792px;
+    width: 100%;
+    margin: 24px auto 0;
+}
+
+section a{
+    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+    background-color: var(--botao);
+    width: 340px;
+    height: 66px;
+    display: block;
+    text-align: center;
+    line-height: 66px;
+    border-radius: 36px;
+    margin: 40px auto;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+section a:hover{
+    background-color: var(--botao-hover);
+    transform: translateY(-7px);
+}
+
+section a:active{
+    transform: translateY(-1px);
+}
+
+section img{
+    display: block;
+    width: 100%;
+    max-width: 792px;
+    height: 446px;
+    margin: 0 auto;
+}
+
+/* Estilos para tablet */
+@media (hover: none) and (max-width: 768px) {
+    header{
+        padding-top: 65px;
+    }
+    header img:hover{
+        transform: none;
+    }
+    p{
+        width: 100%;
+        max-width: 648px;
+    }
+    section a:hover{
+        transform: none;
+    }
+}
+
+/* Estilos para mobile */
+@media (max-width: 520px) {
+    header {
+        padding-top: 32px;
+    }
+    h1{
+        font-size: 40px;
+    }
+    section a{
+        width: 251px;
+        font-size: 20px;
+    }
+    section img{
+        max-width: 340px;   
+        height: 230px;
+    }
+}
